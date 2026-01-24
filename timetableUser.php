@@ -16,7 +16,6 @@ if ($result !== true) {
     exit;
 }
 
-// Validate input
 //Accept either id or username
 
 $id   = $_GET['id']   ?? null;

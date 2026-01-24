@@ -86,7 +86,6 @@ $form->addHiddenValue('gibbonPersonID', $gibbonPersonID);
 $form->setAttribute('hx-post', $session->get('absoluteURL') . '/modules/AccessAPI/manageCards_edit.php');
 $form->setAttribute('hx-target', '#modalContent');
 $form->setAttribute('hx-swap', 'innerHTML');
-//$form->setAttribute('hx-on', "htmx:afterSwap: window.dispatchEvent(new CustomEvent('close-modal'))");
 
 // Card Number
 $row = $form->addRow();
