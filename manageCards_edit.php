@@ -68,9 +68,9 @@ $card = $stmt->fetch();
 $cardNumber = $card['cardNumber'] ?? '';
 $active     = $card['active'] ?? 'Y';
 
-// -------------------------
-// FORM (matching your example)
-// -------------------------
+// -----------
+// EDIT FORM
+// -----------
 
 $form = Form::create(
     'editAccessCard',
