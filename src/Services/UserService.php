@@ -26,7 +26,7 @@ class UserService
                 p.status,
                 r.name AS roleName,
                 CASE WHEN c.active = 'Y' THEN c.cardNumber ELSE NULL END AS idCard,
-                c.active AS cardActive
+                c.active
             FROM gibbonPerson p
             LEFT JOIN gibbonRole r
                 ON p.gibbonRoleIDPrimary = r.gibbonRoleID
@@ -50,7 +50,7 @@ class UserService
                 p.status,
                 r.name AS roleName,
                 CASE WHEN c.active = 'Y' THEN c.cardNumber ELSE NULL END AS idCard,
-                c.active AS cardActive
+                c.active
             FROM gibbonPerson p
             LEFT JOIN gibbonRole r
                 ON p.gibbonRoleIDPrimary = r.gibbonRoleID
