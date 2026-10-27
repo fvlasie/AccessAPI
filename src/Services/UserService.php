@@ -25,13 +25,13 @@ class UserService
                 p.gender,
                 p.status,
                 r.name AS roleName,
-                c.cardNumber AS idCard
+                CASE WHEN c.active = 'Y' THEN c.cardNumber ELSE NULL END AS idCard,
+                c.active AS cardActive
             FROM gibbonPerson p
             LEFT JOIN gibbonRole r
                 ON p.gibbonRoleIDPrimary = r.gibbonRoleID
             LEFT JOIN accessAPICard c
                 ON c.gibbonPersonID = p.gibbonPersonID
-                AND c.active = 'Y';
         ";
 
         return $this->db->select($sql)->fetchAll();
@@ -49,13 +49,13 @@ class UserService
                 p.gender,
                 p.status,
                 r.name AS roleName,
-                c.cardNumber AS idCard
+                CASE WHEN c.active = 'Y' THEN c.cardNumber ELSE NULL END AS idCard,
+                c.active AS cardActive
             FROM gibbonPerson p
             LEFT JOIN gibbonRole r
                 ON p.gibbonRoleIDPrimary = r.gibbonRoleID
             LEFT JOIN accessAPICard c
                 ON c.gibbonPersonID = p.gibbonPersonID
-                AND c.active = 'Y';
             WHERE p.gibbonPersonID = :id
             LIMIT 1
         ";
